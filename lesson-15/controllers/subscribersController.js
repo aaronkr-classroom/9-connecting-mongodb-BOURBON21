@@ -16,6 +16,7 @@ exports.getAllSubscribers = (req, res, next) => {
     if (error) next(error); // 에러를 미들웨어 함수로 전달
     req.data = subscribers; // 요청 객체에 대해 몽고DB로부터 돌아온 데이터의 세팅
     next(); // 다음 미들웨어 함수로 진행
+    
     // render the subscribers view
     res.render("subscribers", {
       subscribers: subscribers,
